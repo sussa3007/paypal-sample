@@ -15,4 +15,6 @@ public class MoneyDto {
 
     private String value;
 
+    private BreakdownDto breakdown;
+
 }
