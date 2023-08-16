@@ -76,7 +76,6 @@ public class PaypalHttpClient {
     public CreateOrderResponseDto createOrder(OrderDto orderDto) throws Exception {
         AccessTokenResponseDto accessTokenDto = getAccessToken();
         String payload = objectMapper.writeValueAsString(orderDto);
-
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create(createUrl(paypalConfig.getBaseUrl(), ORDER_CHECKOUT)))
                 .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
@@ -101,7 +100,6 @@ public class PaypalHttpClient {
 
         HttpResponse<String> response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
         String content = response.body();
-
         return objectMapper.readValue(content, OrderDetailsResponseDto.class);
     }
 
