@@ -1,12 +1,8 @@
 package com.paypilot.paypilot.controller;
 
-import com.paypilot.paypilot.constants.OrderStatus;
-import com.paypilot.paypilot.constants.PaymentLandingPage;
 import com.paypilot.paypilot.dto.CreateOrderResponseDto;
 import com.paypilot.paypilot.dto.OrderDetailsResponseDto;
 import com.paypilot.paypilot.dto.OrderDto;
-import com.paypilot.paypilot.dto.PaypalAppContextDto;
-import com.paypilot.paypilot.entity.Order;
 import com.paypilot.paypilot.repository.OrderRepository;
 import com.paypilot.paypilot.service.OrderService;
 import com.paypilot.paypilot.service.PaypalHttpClient;
@@ -14,7 +10,6 @@ import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 @Slf4j
